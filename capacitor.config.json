@@ -1,0 +1,11 @@
+{
+  "appId": "com.carley.world",
+  "appName": "Carley's World",
+  "webDir": "dist",
+  "backgroundColor": "#2b2238",
+  "ios": {
+    "contentInset": "never",
+    "preferredContentMode": "mobile"
+  },
+  "plugins": {}
+}
