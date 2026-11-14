@@ -1,0 +1,34 @@
+CARLEY'S WORLD - iPHONE VERSION
+================================
+
+An iPhone app file (.ipa) can only be built on a Mac with Xcode and an Apple developer
+account, so it can't be made on this Windows PC. What IS ready is a full iPhone-installable
+web app (a "PWA"). On the iPhone it installs to the Home Screen with its own icon, runs
+full screen like a normal app, works offline, and saves progress on the phone.
+
+The folder "app" is the finished game. To get it onto Carley's iPhone:
+
+OPTION A - easiest (free, ~5 minutes)
+1. Go to https://app.netlify.com/drop (free account) and drag the "app" folder onto the page.
+   (Cloudflare Pages, GitHub Pages or Vercel work too.)
+2. You get a web address (https://something.netlify.app). Open it in SAFARI on the iPhone.
+3. Tap the Share button -> "Add to Home Screen" -> Add.
+4. Open it from the Home Screen. Turn the phone sideways (landscape) and tap once to start.
+
+OPTION B - a real App Store / TestFlight app (needs a Mac + Apple Developer account, $99/year)
+1. On the Mac: install Node.js and Xcode. Copy the whole project folder
+   "Carley's Little World" (the source) over.
+2. In Terminal inside that folder:
+     npm install
+     npm run build
+     npm install @capacitor/core @capacitor/cli @capacitor/ios
+     npx cap init "Carley's World" com.carley.world --web-dir dist
+     npx cap add ios
+     npx cap sync
+     npx cap open ios
+3. In Xcode choose your team, set the device to landscape, press Run (or Archive for TestFlight).
+
+Notes
+- Best played in landscape. Sound starts after the first tap (iPhone rule).
+- Progress is saved on the phone automatically.
+- Testing on this PC: open a terminal in the "app" folder and run "npx serve ." then open the address shown.
